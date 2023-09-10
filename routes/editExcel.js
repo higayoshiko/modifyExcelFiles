@@ -41,16 +41,11 @@ const range = xlsx.utils.decode_range(sheet["!ref"]);
 try {
 
   for (let rowNumber = range.s.r; rowNumber <= range.e.r; rowNumber++){
-    const email = sheet[xlsx.utils.encode_cell({r: rowNumber, c: 3})];
-    //grabbing the email cell
+    let email = sheet[xlsx.utils.encode_cell({r: rowNumber, c: 2})].v;
 
-    // console.log(email)
-    console.log(range.s.r, rowNumber)
-    console.log(range.e.r)
-
-    // if (email === "yushiko444@yahoo.com"){
-    //   sheet[xlsx.utils.encode_cell({r: rowNumber, c: 3})].v + "jello";
-    // }
+    if (email === "yushiko333@yahoo.com"){
+            sheet[xlsx.utils.encode_cell({r: rowNumber, c: 2})].v  = sheet[xlsx.utils.encode_cell({r: rowNumber, c: 2})].v + "jello";
+          }
 
     const newFile = xlsx.utils.book_new();
     xlsx.utils.book_append_sheet(newFile, sheet, "sheet1");
