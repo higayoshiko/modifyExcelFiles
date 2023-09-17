@@ -4,7 +4,7 @@ const https = require('node:https');
 const xlsx = require('xlsx');
 
 
-const workbook = xlsx.readFile("../sample.xlsx");
+const workbook = xlsx.readFile("./sample.xlsx");
 const sheet = workbook.Sheets["Sheet1"];
 
 const range = xlsx.utils.decode_range(sheet["!ref"]);

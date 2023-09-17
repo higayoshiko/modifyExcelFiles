@@ -3,7 +3,7 @@ const app = express();
 const path = require('node:path');
 const ejs = require("ejs");
 // const bodyParser = require("body-parser");
-const port = 8080;
+const port = 8888;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
